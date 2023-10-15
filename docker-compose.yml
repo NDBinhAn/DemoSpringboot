@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: anmysql
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+    volumes:
+      - './docker/db/data:/var/lib/mysql'
+
