@@ -1,21 +1,12 @@
 # Steps for running application
-1. **RUN MYSQL CONTAINER**: 
-* Open terminal in this folder, run command "docker-compose up -d" to deploy mysql container with port 3306
+1. **BUILD JAR FILE**
+* Open terminal in this folder, type command ".\gradlew bootJar" (required Java 17 & Gradle)
 
-2. **SETTING JDK FOR IDE**: 
-* Open this folder by Intelij IDEA, choose File->Settings. 
-* In appearanced window, on the left-side, choose Build... -> Build Tool -> Gradle 
-* On the right-side, settings:
-  * Build and run using: Intelij IDEA
-  * Run test using: Intelij IDEA
-  * Gradle JVM: Temurin-17 (enter Add SDK if not available)
-* Click OK to finish
+2. **COMPOSE CONTAINER GROUP**
+* In terminal in this folder, type "docker-compose up -d" to create app image then run containers app & mysql
+* Result: app listen to port 8080
 
-3. **BUILD, RUN APPLICATION**:
-* Build Project
-* Run Project (backend service will be available on port 8080)
-
-4. **CHECK RESULT BY POSTMAN**
+3. **CHECK RESULT BY POSTMAN**
 * TaskService.postman_collection.json file is attached in this folder. Import this file to Postman then send request step-by-step
 
 

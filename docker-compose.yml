@@ -11,4 +11,15 @@ services:
       - "3306:3306"
     volumes:
       - './docker/db/data:/var/lib/mysql'
-
+  app:
+    depends_on:
+      - mysqldb
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: on-failure
+    #    env_file: ./.env
+    ports:
+      - '8080:8080'
+    volumes:
+      - .m2:/root/.m2
