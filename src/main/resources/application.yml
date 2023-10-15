@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: "jdbc:mysql://localhost:3306/anmysql"
+    username: "root"
+    password: "root"
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        hbm2ddl:
+          auto: none
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+  flyway:
+    url: "jdbc:mysql://localhost:3306/anmysql"
+    locations: "classpath:db/migrations"
+    user: "root"
+    password: "root"
+    sql-migration-prefix: "V"
+    sql-migration-suffixes: ".sql"
+    repeatable-sql-migration-prefix: "R"
+    sql-migration-separator: "__"
+    baseline-version: 1
